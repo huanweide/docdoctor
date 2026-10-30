@@ -1,8 +1,19 @@
+<!-- badges -->
+[![Node](https://img.shields.io/badge/Node.js-≥18-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![Zero-Deps](https://img.shields.io/badge/dependencies-zero-0f9d58?logo=npm&logoColor=white)](https://www.npmjs.com/)
+[![License](https://img.shields.io/github/license/huanweide/docdoctor)](LICENSE)
+<!-- /badges -->
+
 # docdoctor
 
 Markdown 文档健康体检——零依赖、单文件、开箱即扫的命令行工具。把仓库里 `.md` 文档的常见坏味道（死链接、跳级标题、缺失图片替代文本、裸 URL 等）一次性查出来，给出 0–100 健康分，并可直接接进 CI 做门禁。
 
 不需要安装任何依赖，不需要联网，不需要配置文件。`node index.js` 即可运行。
+
+## 谁该用 / 谁先别用
+
+- **该用**：维护 `docs/` 或大量 `.md` 的仓库；想在 CI 里拦死链接 / 缺 alt / 跳级标题；不想为 ESLint / remark 写一整套配置的人。
+- **先别用**：已用 markdownlint + markdown-link-check 且对覆盖度满意的人（可作互补）；文档几乎全是外部链接、无需本地校验的。
 
 ## 为什么做这个
 
@@ -93,8 +104,8 @@ jobs:
 
 ## 与竞品的差异
 
-- **linkbust**：零依赖、只查本地死链接这一个专科。docdoctor 把死链接作为众多维度之一，额外覆盖标题结构、文档规模、图片 alt、裸 URL、参考链接，并输出健康分和 CI 门禁——定位是"文档整体健康度"而非"死链接专科"。
-- **markdownlint / remark**：需要安装并配置规则集，偏重"风格规范"。docdoctor 零依赖、开箱即扫、偏重"健康体检 + 门禁"。
+- **linkbust**：零依赖、只查本地死链接这一个专科。docdoctor 把死链接作为众多维度之一，额外覆盖标题结构、文档规模、图片 alt、裸 URL、参考链接，并输出健康分和 CI 门禁——定位是「文档整体健康度」而非「死链接专科」。
+- **markdownlint / remark**：需要安装并配置规则集，偏重「风格规范」。docdoctor 零依赖、开箱即扫、偏重「健康体检 + 门禁」。
 - **axe / markdown-link-check**：前者要浏览器 DOM，后者要联网查外部 URL。docdoctor 纯本地、确定性、不会因外部网站宕机而让 CI 飘红。
 
 ## 示例输出
@@ -106,6 +117,14 @@ jobs:
 
 汇总：3 文件 · 1 高危 · 1 中危 · 0 低危 · 健康分 88
 ```
+
+## ⭐ 给个 Star
+
+如果 docdoctor 帮你拦住过一次「文档死链上线」的尴尬，欢迎点个 Star ⭐：https://github.com/huanweide/docdoctor
+
+## 作者
+
+由 [huanweide](https://github.com/huanweide) 维护。
 
 ## 许可证
 
