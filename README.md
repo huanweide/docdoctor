@@ -5,6 +5,7 @@
 <!-- /badges -->
 
 # docdoctor
+> **English** · [README_EN.md](./README_EN.md)
 
 Markdown 文档健康体检——零依赖、单文件、开箱即扫的命令行工具。把仓库里 `.md` 文档的常见坏味道（死链接、跳级标题、缺失图片替代文本、裸 URL 等）一次性查出来，给出 0–100 健康分，并可直接接进 CI 做门禁。
 
